@@ -28,13 +28,11 @@
     "angular-ui-router": "~0.2.18",
     "bootstrap-btn-outline-rounded": "~0.0.4",
     "components-font-awesome": "~4.5.0",
-    "angular-snap": "~1.8.5",
     "jquery": "~2.2.1",
     "jquery-ui": "~1.11.4",
-    "angular-resource": "~1.5.0",
-    "angular-sanitize": "~1.5.0",
     "ngmap": "~1.16.7",
     "angular-scenario": "~1.5.0",
-    "underscore": "~1.8.3"
+    "underscore": "~1.8.3",
+    "angular-cookies": "~1.5.0"
   }
 }
