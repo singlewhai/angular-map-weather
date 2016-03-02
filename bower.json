@@ -1,0 +1,40 @@
+{
+  "name": "task1",
+  "homepage": "https://github.com/singlewhai/task1",
+  "authors": [
+    "singlewhai <n.ratanasuwan@gmail.com>"
+  ],
+  "description": "Build a simple HTML/JS app which, when you open the site, asks for a permission to read your current location, and then uses the",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "test"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular-mocks": "~1.5.0"
+  },
+  "dependencies": {
+    "angular": "~1.5.0",
+    "json3": "~3.3.2",
+    "bootstrap": "~3.3.6",
+    "angular-ui-router": "~0.2.18",
+    "bootstrap-btn-outline-rounded": "~0.0.4",
+    "components-font-awesome": "~4.5.0",
+    "angular-snap": "~1.8.5",
+    "jquery": "~2.2.1",
+    "jquery-ui": "~1.11.4",
+    "angular-resource": "~1.5.0",
+    "angular-sanitize": "~1.5.0",
+    "ngmap": "~1.16.7",
+    "angular-scenario": "~1.5.0",
+    "underscore": "~1.8.3"
+  }
+}

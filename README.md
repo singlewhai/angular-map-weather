@@ -1,5 +1,5 @@
 # task1
-User `bower install` to install 
+User `npm install` and `bower install` to install 
 
 To run Develop is `gulp serve`
 and to compile to production is `gulp build`
