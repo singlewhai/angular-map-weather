@@ -33,6 +33,8 @@
     "ngmap": "~1.16.7",
     "angular-scenario": "~1.5.0",
     "underscore": "~1.8.3",
-    "angular-cookies": "~1.5.0"
+    "angular-cookies": "~1.5.0",
+    "angular-busy": "~4.1.3",
+    "angular-resource": "~1.5.0"
   }
 }

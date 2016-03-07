@@ -8,12 +8,26 @@ var
     },
     // Set API servers for local, staging, production.
     server_uris = {
-        'local'      : 'localhost:3000',
+        'local'      : 'localhost:8080',
         'staging'    : 'staging.task1.com',
         'production' : 'task1.com'
     },
+    // Set Third party API
+    third_uris = {
+        'local'     : {
+            'map'       : {
+                'uri'   : 'https://maps.googleapis.com/maps/api/geocode/json?',
+                'key'   : 'AIzaSyDo61J1I1jXzNp6LyYWe7HWsZPf9QeOD1E'
+            },
+            'weather'   : {
+                'uri'   : 'http://api.openweathermap.org/data/2.5/weather?',
+                'appid' : 'c95f3d803d7951b08cecda8a7dbaf22c',
+                'icon'  : function (icon) { return 'http://openweathermap.org/img/w/' + icon + '.png'; }
+            }
+        }
+    }
     current_environment = false,
-    app_server          = '';
+    google_map          = '';
 
 // Set the current environment based on detected hostname.
 if (hosts.hasOwnProperty(window.location.host)) {
@@ -22,3 +36,5 @@ if (hosts.hasOwnProperty(window.location.host)) {
 } 
 
 app_server = '//' + server_uris[current_environment];
+google_map  = third_uris[current_environment]['map'];
+weather_api = third_uris[current_environment]['weather'];

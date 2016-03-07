@@ -1,7 +1,15 @@
 var app = angular.module('app', 
-    ['ui.router', 'ngCookies', 'ngMap']);
+    ['ui.router', 'ngCookies', 'ngMap', 'cgBusy', 'appServices']);
 
 app.server = app_server; // Set the current environment based on detected hostname.
+
+// Configure spinner loader.
+app.value('cgBusyDefaults', {
+    message:'Loading...',
+    backdrop: false,
+    delay: 300,
+    minDuration: 700,
+});
 
 // Attach Basic Authentication and redirect for 401, 404, or 500 response.
 app.factory('httpInterceptor', function ($q, $location, $rootScope, $cookieStore) {
@@ -42,7 +50,7 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
      * Access-Control-Allow-Origin: *
     */
     $httpProvider.defaults.useXDomain = true;
-    $httpProvider.defaults.withCredentials = true;
+    //$httpProvider.defaults.withCredentials = true;
     delete $httpProvider.defaults.headers.common["X-Requested-With"];
 
     // Inject authInterceptor.
@@ -70,8 +78,21 @@ app.run(function ($q, $rootScope, $location, $cookieStore, $window, $document) {
     'use strict';
    
     $rootScope.goHome = function() {
-        $location.path('/homw');
+        $location.path('/home');
     }
 
 });
 
+app.directive('ngEnter', function () {
+    return function (scope, element, attrs) {
+        element.bind("keydown keypress", function (event) {
+            if(event.which === 13) {
+                scope.$apply(function (){
+                    scope.$eval(attrs.ngEnter);
+                });
+
+                event.preventDefault();
+            }
+        });
+    };
+});

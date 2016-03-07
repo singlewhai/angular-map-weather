@@ -1,0 +1,59 @@
+<div class="weather"> 
+    <div class="container">
+        <h3 class="title">Weather</h3>
+        <div class="col-xs-12"><h4 class="title">{{weather.name}}</h5></div>
+        <div class="col-xs-6">
+            <ul class="row">
+                <li class="col-xs-12"><label>{{weather.dt * 1000 | date:'EEEE HH:mm'}}</label></li>
+                <li class="col-xs-12"><label>{{weather.weather[0].description}}</label></li>
+            </ul> 
+        </div>
+        <div class="col-xs-6">
+            <ul class="row">
+                <li class="col-xs-4 icon"><img src="{{current_location.icon}}" alt="{{weather.weather[0].description}}" /></li>
+                <li class="col-xs-8"><label>{{weather.main.temp}} &#176;K</label></li>
+                <li class="col-xs-8"><label>{{weather.main.temp - 273.15| number:2}} &#176;C</label></li>
+            </ul> 
+        </div>
+        <div class="col-xs-12">
+            <ul class="row col-xs-12">
+                <li class="col-xs-3 col-sm-3">
+                    Pressure
+                </li>
+                <li class="col-xs-4 col-sm-4">
+                    <label>{{weather.main.pressure | number:2}}hPa</label>
+                </li>
+                <li class="col-xs-3 col-sm-3">
+                    Wind
+                </li>
+                <li class="col-xs-2 col-sm-2">
+                    <label>{{weather.wind.speed}}m/s</label>
+                </li>
+                <li class="col-xs-3 col-sm-3">
+                    Humidity
+                </li>
+                <li class="col-xs-4 col-sm-4">
+                    <label>{{weather.main.humidity}}%</label>
+                </li>
+                <li class="col-xs-3 col-sm-3">
+                    Direction
+                </li>
+                <li class="col-xs-2 col-sm-2">
+                    <label>{{weather.wind.deg | number:2}}&#176;</label>
+                </li>
+                <li class="col-xs-3 col-sm-3">
+                    Sunrise 
+                </li>
+                <li class="col-xs-4 col-sm-4">
+                    <label>{{weather.sys.sunrise * 1000 | date:'HH:mm:ss'}}</label>
+                </li>
+                <li class="col-xs-3 col-sm-3">
+                    Sunset 
+                </li>
+                <li class="col-xs-2 col-sm-2">
+                    <label>{{weather.sys.sunset * 1000 | date:'HH:mm:ss'}}</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
