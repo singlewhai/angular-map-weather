@@ -17,11 +17,11 @@ var
         'local'     : {
             'map'       : {
                 'uri'   : 'https://maps.googleapis.com/maps/api/geocode/json?',
-                'key'   : 'AIzaSyDo61J1I1jXzNp6LyYWe7HWsZPf9QeOD1E'
+                'key'   : config.map.key
             },
             'weather'   : {
                 'uri'   : 'http://api.openweathermap.org/data/2.5/weather?',
-                'appid' : 'c95f3d803d7951b08cecda8a7dbaf22c',
+                'appid' : config.weather.appid,
                 'icon'  : function (icon) { return 'http://openweathermap.org/img/w/' + icon + '.png'; }
             }
         }
