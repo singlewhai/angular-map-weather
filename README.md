@@ -19,3 +19,5 @@ var config = {
     }
 }
 ```
+
+Live demo on `http://walkingpenguins.tk/weather/`

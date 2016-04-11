@@ -2,19 +2,41 @@ var
     // Set hosts so we can detect local, staging, production.
     brand = "Walking Penguins",
     hosts = {
-        'localhost:8080'        : 'local',
-        'staging.task1.com'     : 'staging',
-        'task1.com'             : 'production'
+        'localhost:8080'            : 'local',
+        'staging.weather.tk'        : 'staging',
+        'walkingpenguins.tk'        : 'production'
     },
     // Set API servers for local, staging, production.
     server_uris = {
         'local'      : 'localhost:8080',
-        'staging'    : 'staging.task1.com',
-        'production' : 'task1.com'
+        'staging'    : 'staging.walkingpenguins.tk',
+        'production' : 'walkingpenguins.tk'
     },
     // Set Third party API
     third_uris = {
         'local'     : {
+            'map'       : {
+                'uri'   : 'https://maps.googleapis.com/maps/api/geocode/json?',
+                'key'   : config.map.key
+            },
+            'weather'   : {
+                'uri'   : 'http://api.openweathermap.org/data/2.5/weather?',
+                'appid' : config.weather.appid,
+                'icon'  : function (icon) { return 'http://openweathermap.org/img/w/' + icon + '.png'; }
+            }
+        },
+        'staging'     : {
+            'map'       : {
+                'uri'   : 'https://maps.googleapis.com/maps/api/geocode/json?',
+                'key'   : config.map.key
+            },
+            'weather'   : {
+                'uri'   : 'http://api.openweathermap.org/data/2.5/weather?',
+                'appid' : config.weather.appid,
+                'icon'  : function (icon) { return 'http://openweathermap.org/img/w/' + icon + '.png'; }
+            }
+        },
+        'production'     : {
             'map'       : {
                 'uri'   : 'https://maps.googleapis.com/maps/api/geocode/json?',
                 'key'   : config.map.key
