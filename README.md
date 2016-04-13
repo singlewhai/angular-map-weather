@@ -1,4 +1,4 @@
-# task1
+# Angular-Map
 User `npm install` and `bower install` to install 
 
 To run Develop is `gulp serve`
